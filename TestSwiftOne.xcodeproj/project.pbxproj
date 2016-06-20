@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		F319B5C41D17C0A400106944 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5C31D17C0A400106944 /* AppDelegate.swift */; };
-		F319B5C61D17C0A400106944 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5C51D17C0A400106944 /* ViewController.swift */; };
 		F319B5CB1D17C0A400106944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F319B5CA1D17C0A400106944 /* Assets.xcassets */; };
 		F319B5CE1D17C0A400106944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F319B5CC1D17C0A400106944 /* LaunchScreen.storyboard */; };
 		F319B5D91D17C0A400106944 /* TestSwiftOneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5D81D17C0A400106944 /* TestSwiftOneTests.swift */; };
 		F319B5E41D17C0A400106944 /* TestSwiftOneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5E31D17C0A400106944 /* TestSwiftOneUITests.swift */; };
-		F319B5F21D17D64900106944 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5F11D17D64900106944 /* MainViewController.swift */; };
+		F319B6001D17DA3800106944 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5F61D17DA3800106944 /* DiscoverTableViewController.swift */; };
+		F319B6011D17DA3800106944 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5F81D17DA3800106944 /* HomeTableViewController.swift */; };
+		F319B6021D17DA3800106944 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5FA1D17DA3800106944 /* MainViewController.swift */; };
+		F319B6031D17DA3800106944 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5FC1D17DA3800106944 /* MessageTableViewController.swift */; };
+		F319B6041D17DA3800106944 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5FE1D17DA3800106944 /* ProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		F319B5C01D17C0A300106944 /* TestSwiftOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSwiftOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F319B5C31D17C0A400106944 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F319B5C51D17C0A400106944 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F319B5CA1D17C0A400106944 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F319B5CD1D17C0A400106944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F319B5CF1D17C0A400106944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +48,11 @@
 		F319B5DF1D17C0A400106944 /* TestSwiftOneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSwiftOneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F319B5E31D17C0A400106944 /* TestSwiftOneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwiftOneUITests.swift; sourceTree = "<group>"; };
 		F319B5E51D17C0A400106944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F319B5F11D17D64900106944 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F319B5F61D17DA3800106944 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		F319B5F81D17DA3800106944 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		F319B5FA1D17DA3800106944 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F319B5FC1D17DA3800106944 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		F319B5FE1D17DA3800106944 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				F319B5C31D17C0A400106944 /* AppDelegate.swift */,
-				F319B5C51D17C0A400106944 /* ViewController.swift */,
-				F319B5F11D17D64900106944 /* MainViewController.swift */,
+				F319B5F31D17DA3800106944 /* Classes */,
 				F319B5CA1D17C0A400106944 /* Assets.xcassets */,
 				F319B5CC1D17C0A400106944 /* LaunchScreen.storyboard */,
 				F319B5CF1D17C0A400106944 /* Info.plist */,
@@ -123,6 +128,74 @@
 				F319B5E51D17C0A400106944 /* Info.plist */,
 			);
 			path = TestSwiftOneUITests;
+			sourceTree = "<group>";
+		};
+		F319B5F31D17DA3800106944 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F319B5F41D17DA3800106944 /* Common */,
+				F319B5F51D17DA3800106944 /* Discover */,
+				F319B5F71D17DA3800106944 /* Home */,
+				F319B5F91D17DA3800106944 /* Main */,
+				F319B5FB1D17DA3800106944 /* Message */,
+				F319B5FD1D17DA3800106944 /* Profile */,
+				F319B5FF1D17DA3800106944 /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F319B5F41D17DA3800106944 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F319B5F51D17DA3800106944 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				F319B5F61D17DA3800106944 /* DiscoverTableViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		F319B5F71D17DA3800106944 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F319B5F81D17DA3800106944 /* HomeTableViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F319B5F91D17DA3800106944 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F319B5FA1D17DA3800106944 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F319B5FB1D17DA3800106944 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F319B5FC1D17DA3800106944 /* MessageTableViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		F319B5FD1D17DA3800106944 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F319B5FE1D17DA3800106944 /* ProfileTableViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F319B5FF1D17DA3800106944 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,9 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F319B5F21D17D64900106944 /* MainViewController.swift in Sources */,
-				F319B5C61D17C0A400106944 /* ViewController.swift in Sources */,
+				F319B6001D17DA3800106944 /* DiscoverTableViewController.swift in Sources */,
+				F319B6021D17DA3800106944 /* MainViewController.swift in Sources */,
 				F319B5C41D17C0A400106944 /* AppDelegate.swift in Sources */,
+				F319B6011D17DA3800106944 /* HomeTableViewController.swift in Sources */,
+				F319B6041D17DA3800106944 /* ProfileTableViewController.swift in Sources */,
+				F319B6031D17DA3800106944 /* MessageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

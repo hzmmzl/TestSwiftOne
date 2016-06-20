@@ -1,14 +1,19 @@
 //
 //  MainViewController.swift
-//  TestSwiftOne
+//  DSWeibo
 //
-//  Created by winbei on 16/6/20.
-//  Copyright © 2016年 winbei. All rights reserved.
+//  Created by xiaomage on 15/9/7.
+//  Copyright © 2015年 小码哥. All rights reserved.
 //
 
 import UIKit
-
-class MainViewController: UIViewController {
+/*
+command + j -> 定位到目录结构
+⬆️⬇️键选择文件夹
+按回车 -> command + c 拷贝文件名称
+command + n 创建文件
+*/
+class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
