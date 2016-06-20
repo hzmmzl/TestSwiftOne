@@ -13,6 +13,7 @@
 		F319B5CE1D17C0A400106944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F319B5CC1D17C0A400106944 /* LaunchScreen.storyboard */; };
 		F319B5D91D17C0A400106944 /* TestSwiftOneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5D81D17C0A400106944 /* TestSwiftOneTests.swift */; };
 		F319B5E41D17C0A400106944 /* TestSwiftOneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5E31D17C0A400106944 /* TestSwiftOneUITests.swift */; };
+		F319B5F21D17D64900106944 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5F11D17D64900106944 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		F319B5DF1D17C0A400106944 /* TestSwiftOneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSwiftOneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F319B5E31D17C0A400106944 /* TestSwiftOneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwiftOneUITests.swift; sourceTree = "<group>"; };
 		F319B5E51D17C0A400106944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F319B5F11D17D64900106944 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				F319B5C31D17C0A400106944 /* AppDelegate.swift */,
 				F319B5C51D17C0A400106944 /* ViewController.swift */,
+				F319B5F11D17D64900106944 /* MainViewController.swift */,
 				F319B5CA1D17C0A400106944 /* Assets.xcassets */,
 				F319B5CC1D17C0A400106944 /* LaunchScreen.storyboard */,
 				F319B5CF1D17C0A400106944 /* Info.plist */,
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F319B5F21D17D64900106944 /* MainViewController.swift in Sources */,
 				F319B5C61D17C0A400106944 /* ViewController.swift in Sources */,
 				F319B5C41D17C0A400106944 /* AppDelegate.swift in Sources */,
 			);
@@ -472,6 +476,7 @@
 				F319B5EA1D17C0A400106944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F319B5EB1D17C0A400106944 /* Build configuration list for PBXNativeTarget "TestSwiftOneTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +485,7 @@
 				F319B5ED1D17C0A400106944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F319B5EE1D17C0A400106944 /* Build configuration list for PBXNativeTarget "TestSwiftOneUITests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +494,7 @@
 				F319B5F01D17C0A400106944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
