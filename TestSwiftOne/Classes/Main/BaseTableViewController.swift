@@ -1,29 +1,42 @@
 //
-//  HomeTableViewController.swift
-//  DSWeibo
+//  BaseTableViewController.swift
+//  TestSwiftOne
 //
-//  Created by xiaomage on 15/9/7.
-//  Copyright © 2015年 小码哥. All rights reserved.
+//  Created by winbei on 16/6/21.
+//  Copyright © 2016年 winbei. All rights reserved.
 //
 
 import UIKit
 
-class HomeTableViewController: BaseTableViewController {
-
+class BaseTableViewController: UITableViewController {
+    // 定义一个变量保存用户当前是否登录
+    var userLogin = false
+    // 定义属性保存未登录界面
+    var visitorView: VisitorView?
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        if !userLogin {
-            visitorView!.setupVisitorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
-        }
+        userLogin ? super.viewDidLoad() : setupVisitorView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func setupVisitorView(){
+        let customView = VisitorView()
+        view = customView
+        visitorView = customView
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BaseTableViewController.registerButtonClicked))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BaseTableViewController.loginButtonClicked))
     }
-
+    
+    
+    func registerButtonClicked() {
+        print(#function)
+    }
+    func loginButtonClicked() {
+        print(#function)
+    }
+    
+    
+    
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0

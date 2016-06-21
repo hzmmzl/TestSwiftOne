@@ -19,6 +19,9 @@
 		F319B6041D17DA3800106944 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B5FE1D17DA3800106944 /* ProfileTableViewController.swift */; };
 		F319B6081D17E94200106944 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = F319B6061D17E94200106944 /* MainVCSettings.json */; };
 		F319B6091D17E94200106944 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319B6071D17E94200106944 /* NullViewController.swift */; };
+		F3B809EC1D191CD3001A3E1B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809EB1D191CD3001A3E1B /* BaseTableViewController.swift */; };
+		F3B809EE1D192C01001A3E1B /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809ED1D192C01001A3E1B /* VisitorView.swift */; };
+		F3B809F01D1932FE001A3E1B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809EF1D1932FE001A3E1B /* UIView+AutoLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		F319B5FE1D17DA3800106944 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		F319B6061D17E94200106944 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		F319B6071D17E94200106944 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		F3B809EB1D191CD3001A3E1B /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		F3B809ED1D192C01001A3E1B /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		F3B809EF1D1932FE001A3E1B /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,8 @@
 			children = (
 				F319B6051D17E94200106944 /* Resource */,
 				F319B5FA1D17DA3800106944 /* MainViewController.swift */,
+				F3B809EB1D191CD3001A3E1B /* BaseTableViewController.swift */,
+				F3B809ED1D192C01001A3E1B /* VisitorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 		F319B5FF1D17DA3800106944 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F3B809EF1D1932FE001A3E1B /* UIView+AutoLayout.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -345,9 +354,12 @@
 			files = (
 				F319B6001D17DA3800106944 /* DiscoverTableViewController.swift in Sources */,
 				F319B6021D17DA3800106944 /* MainViewController.swift in Sources */,
+				F3B809EC1D191CD3001A3E1B /* BaseTableViewController.swift in Sources */,
 				F319B5C41D17C0A400106944 /* AppDelegate.swift in Sources */,
 				F319B6011D17DA3800106944 /* HomeTableViewController.swift in Sources */,
+				F3B809F01D1932FE001A3E1B /* UIView+AutoLayout.swift in Sources */,
 				F319B6041D17DA3800106944 /* ProfileTableViewController.swift in Sources */,
+				F3B809EE1D192C01001A3E1B /* VisitorView.swift in Sources */,
 				F319B6031D17DA3800106944 /* MessageTableViewController.swift in Sources */,
 				F319B6091D17E94200106944 /* NullViewController.swift in Sources */,
 			);
