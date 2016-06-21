@@ -22,6 +22,7 @@
 		F3B809EC1D191CD3001A3E1B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809EB1D191CD3001A3E1B /* BaseTableViewController.swift */; };
 		F3B809EE1D192C01001A3E1B /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809ED1D192C01001A3E1B /* VisitorView.swift */; };
 		F3B809F01D1932FE001A3E1B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809EF1D1932FE001A3E1B /* UIView+AutoLayout.swift */; };
+		F3B809F41D1949FE001A3E1B /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809F31D1949FE001A3E1B /* UIBarButtonItem+Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		F3B809EB1D191CD3001A3E1B /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		F3B809ED1D192C01001A3E1B /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		F3B809EF1D1932FE001A3E1B /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		F3B809F31D1949FE001A3E1B /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		F319B5F41D17DA3800106944 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F3B809F31D1949FE001A3E1B /* UIBarButtonItem+Category.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				F3B809EC1D191CD3001A3E1B /* BaseTableViewController.swift in Sources */,
 				F319B5C41D17C0A400106944 /* AppDelegate.swift in Sources */,
 				F319B6011D17DA3800106944 /* HomeTableViewController.swift in Sources */,
+				F3B809F41D1949FE001A3E1B /* UIBarButtonItem+Category.swift in Sources */,
 				F3B809F01D1932FE001A3E1B /* UIView+AutoLayout.swift in Sources */,
 				F319B6041D17DA3800106944 /* ProfileTableViewController.swift in Sources */,
 				F3B809EE1D192C01001A3E1B /* VisitorView.swift in Sources */,

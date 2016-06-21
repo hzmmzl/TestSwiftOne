@@ -14,12 +14,23 @@ class HomeTableViewController: BaseTableViewController {
         super.viewDidLoad()
         if !userLogin {
             visitorView!.setupVisitorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
+            return
         }
+        setupNav()
+    }
+    
+    private func setupNav()
+    {
+        navigationItem.leftBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_friendattention", target: self, action: #selector(HomeTableViewController.leftItemClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_pop", target: self, action: #selector(HomeTableViewController.rightItemClick))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    func leftItemClick() {
+        
+    }
+    func rightItemClick() {
+        
     }
 
     // MARK: - Table view data source
