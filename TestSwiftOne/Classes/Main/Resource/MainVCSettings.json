@@ -10,10 +10,16 @@
      "imageName": "tabbar_message_center"
  },
  {
-     "vcName": "DiscoverTableViewController",
-     "title": "广场",
-     "imageName": "tabbar_discover"
+ "vcName": "NullViewController",
+ "title": "",
+ "imageName": ""
  },
+ {
+ "vcName": "DiscoverTableViewController",
+ "title": "广场",
+ "imageName": "tabbar_discover"
+ },
+ 
  {
      "vcName": "ProfileTableViewController",
      "title": "我",

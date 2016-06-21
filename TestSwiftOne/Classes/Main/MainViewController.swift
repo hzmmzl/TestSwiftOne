@@ -7,18 +7,23 @@
 //
 
 import UIKit
-/*
-command + j -> 定位到目录结构
-⬆️⬇️键选择文件夹
-按回车 -> command + c 拷贝文件名称
-command + n 创建文件
-*/
+
 class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = UIColor.orangeColor()
-        
+        addChildViewController()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setupComposeBtn()
+    }
+    
+    
+    //tabar控制器
+    private func addChildViewController() {
         let path = NSBundle.mainBundle().pathForResource("MainVCSettings.json", ofType: nil)
         if let jsonPath = path {
             let jsonData = NSData(contentsOfFile: jsonPath)
@@ -50,4 +55,28 @@ class MainViewController: UITabBarController {
         nav.addChildViewController(vc)
         addChildViewController(nav)
     }
+    
+    //按钮
+    private func setupComposeBtn()
+    {
+        tabBar.addSubview(composeBtn)
+        let width: CGFloat = UIScreen.mainScreen().bounds.width / CGFloat((viewControllers?.count)!)
+        composeBtn.frame = CGRect(x: width*2, y: 0, width: width, height: 49)
+    }
+    
+    private lazy var composeBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(named:"tabbar_compose_icon_add"), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named:"tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
+        btn.setBackgroundImage(UIImage(named:"tabbar_compose_button"), forState: UIControlState.Normal)
+        btn.setBackgroundImage(UIImage(named:"tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
+        btn.addTarget(self, action: #selector(MainViewController.composeBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
+        return btn
+    }()
+    
+    
+    func composeBtnClick() {
+        print(#function)
+    }
+    
 }
