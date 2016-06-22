@@ -23,6 +23,7 @@
 		F3B809EE1D192C01001A3E1B /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809ED1D192C01001A3E1B /* VisitorView.swift */; };
 		F3B809F01D1932FE001A3E1B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809EF1D1932FE001A3E1B /* UIView+AutoLayout.swift */; };
 		F3B809F41D1949FE001A3E1B /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B809F31D1949FE001A3E1B /* UIBarButtonItem+Category.swift */; };
+		F3CE8E7F1D1A345B00CAFFDE /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CE8E7E1D1A345B00CAFFDE /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F3B809ED1D192C01001A3E1B /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		F3B809EF1D1932FE001A3E1B /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		F3B809F31D1949FE001A3E1B /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
+		F3CE8E7E1D1A345B00CAFFDE /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				F3B809F31D1949FE001A3E1B /* UIBarButtonItem+Category.swift */,
+				F3CE8E7E1D1A345B00CAFFDE /* TitleButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				F319B6041D17DA3800106944 /* ProfileTableViewController.swift in Sources */,
 				F3B809EE1D192C01001A3E1B /* VisitorView.swift in Sources */,
 				F319B6031D17DA3800106944 /* MessageTableViewController.swift in Sources */,
+				F3CE8E7F1D1A345B00CAFFDE /* TitleButton.swift in Sources */,
 				F319B6091D17E94200106944 /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

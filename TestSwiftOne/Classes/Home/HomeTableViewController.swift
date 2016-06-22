@@ -23,6 +23,12 @@ class HomeTableViewController: BaseTableViewController {
     {
         navigationItem.leftBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_friendattention", target: self, action: #selector(HomeTableViewController.leftItemClick))
         navigationItem.rightBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_pop", target: self, action: #selector(HomeTableViewController.rightItemClick))
+        
+        //titleView
+        let titleView: TitleButton = TitleButton()
+        titleView.setTitle("我的我的", forState: UIControlState.Normal)
+        self.navigationItem.titleView = titleView
+        
     }
 
 
