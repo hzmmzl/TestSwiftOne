@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+let popoverWillShow = "popoverWillShow"
+let popoverWillDismiss = "popoverWillDismiss"
 class HomeTableViewController: BaseTableViewController {
 
     override func viewDidLoad() {
@@ -16,7 +17,17 @@ class HomeTableViewController: BaseTableViewController {
             visitorView!.setupVisitorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
             return
         }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.popoverDidShowOrDismiss), name: popoverWillShow, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.popoverDidShowOrDismiss), name: popoverWillDismiss, object: nil)
         setupNav()
+    }
+    func popoverDidShowOrDismiss(){
+        let titleButton = navigationItem.titleView as! TitleButton
+        titleButton.selected = !titleButton.selected
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     private func setupNav()
@@ -27,20 +38,32 @@ class HomeTableViewController: BaseTableViewController {
         //titleView
         let titleView: TitleButton = TitleButton()
         titleView.setTitle("我的我的", forState: UIControlState.Normal)
+        titleView.addTarget(self, action: #selector(HomeTableViewController.titleButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.navigationItem.titleView = titleView
-        
     }
-
-
+    
+    func titleButtonClicked(btn: TitleButton) {
+//        btn.selected = !btn.selected
+        let vc = PopoverViewController()
+        vc.transitioningDelegate = popoverAnimation;
+        vc.modalPresentationStyle = UIModalPresentationStyle.Custom
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
     func leftItemClick() {
         
     }
     func rightItemClick() {
         
     }
-
+    
+    private lazy var popoverAnimation: PopoverAnimation = {
+        let pop = PopoverAnimation()
+        return pop
+    }()
+    
+    
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -61,49 +84,6 @@ class HomeTableViewController: BaseTableViewController {
     }
     */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
+
