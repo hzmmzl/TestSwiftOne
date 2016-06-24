@@ -54,7 +54,8 @@ class HomeTableViewController: BaseTableViewController {
         
     }
     func rightItemClick() {
-        
+        let qrCodeView = QrCodeViewController()
+        presentViewController(qrCodeView, animated: true, completion: nil)
     }
     
     private lazy var popoverAnimation: PopoverAnimation = {
