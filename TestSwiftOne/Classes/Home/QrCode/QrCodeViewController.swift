@@ -12,6 +12,7 @@ class QrCodeViewController: UIViewController,UITabBarDelegate {
     @IBOutlet weak var containerHeightCons: NSLayoutConstraint!
     @IBOutlet weak var tiaoXinMaImage: UIImageView!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var tabbar: UITabBar!
     
     override func viewDidLoad() {
@@ -28,7 +29,14 @@ class QrCodeViewController: UIViewController,UITabBarDelegate {
     @IBAction func selectPhotoButtonClicked() {
         
     }
-    
+    private func startAnimation(){
+        bottomConstraint.constant = 0
+        tiaoXinMaImage.layoutSubviews()
+        UIView.animateWithDuration(2) {
+            self.bottomConstraint.constant = -self.containerHeightCons.constant
+            self.tiaoXinMaImage.layoutSubviews()
+        }
+    }
     
     //MARK: -UITabBarDelegate
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
@@ -37,5 +45,7 @@ class QrCodeViewController: UIViewController,UITabBarDelegate {
         }else if item.tag == 2{
             containerHeightCons.constant = 150
         }
+        tiaoXinMaImage.layer.removeAllAnimations()
+        startAnimation()
     }
 }
