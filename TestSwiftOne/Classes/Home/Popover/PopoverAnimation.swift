@@ -11,45 +11,45 @@ import UIKit
 class PopoverAnimation: NSObject,UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     /// 记录当前是否是展开
     var isPresent: Bool = false
-    var presentFrame = CGRectZero
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        let popo = PopoverPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    var presentFrame = CGRect.zero
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let popo = PopoverPresentationController(presentedViewController: presented, presenting: presenting)
         popo.presentFrame = presentFrame
         return popo
     }
     
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresent = true
-        NSNotificationCenter.defaultCenter().postNotificationName(popoverWillShow, object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: popoverWillShow), object: nil)
         return self
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresent = false
-        NSNotificationCenter.defaultCenter().postNotificationName(popoverWillDismiss, object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: popoverWillDismiss), object: nil)
         return self
     }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 1
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         if isPresent{
-            let toView = transitionContext.viewForKey(UITransitionContextToViewKey)
-            toView?.transform = CGAffineTransformMakeScale(1, 0);
-            transitionContext.containerView()?.addSubview(toView!)
+            let toView = transitionContext.view(forKey: UITransitionContextViewKey.to)
+            toView?.transform = CGAffineTransform(scaleX: 1, y: 0);
+            transitionContext.containerView.addSubview(toView!)
             toView?.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
             
-            UIView.animateWithDuration(0.5, animations: {
-                toView?.transform = CGAffineTransformIdentity
+            UIView.animate(withDuration: 0.5, animations: {
+                toView?.transform = CGAffineTransform.identity
                 
             })
             transitionContext.completeTransition(true)
         }else{
-            let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)
-            UIView.animateWithDuration(0.2, animations: {
-                fromView?.transform = CGAffineTransformMakeScale(1.0, 0.00000001)
+            let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from)
+            UIView.animate(withDuration: 0.2, animations: {
+                fromView?.transform = CGAffineTransform(scaleX: 1.0, y: 0.00000001)
                 },completion:{(_) ->Void in
                     transitionContext.completeTransition(true)
             })

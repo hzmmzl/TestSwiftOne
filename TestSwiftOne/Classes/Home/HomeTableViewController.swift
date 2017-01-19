@@ -17,37 +17,37 @@ class HomeTableViewController: BaseTableViewController {
             visitorView!.setupVisitorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
             return
         }
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.popoverDidShowOrDismiss), name: popoverWillShow, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.popoverDidShowOrDismiss), name: popoverWillDismiss, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeTableViewController.popoverDidShowOrDismiss), name: NSNotification.Name(rawValue: popoverWillShow), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeTableViewController.popoverDidShowOrDismiss), name: NSNotification.Name(rawValue: popoverWillDismiss), object: nil)
         setupNav()
     }
     func popoverDidShowOrDismiss(){
         let titleButton = navigationItem.titleView as! TitleButton
-        titleButton.selected = !titleButton.selected
+        titleButton.isSelected = !titleButton.isSelected
     }
     
     deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    private func setupNav()
+    fileprivate func setupNav()
     {
         navigationItem.leftBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_friendattention", target: self, action: #selector(HomeTableViewController.leftItemClick))
         navigationItem.rightBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_pop", target: self, action: #selector(HomeTableViewController.rightItemClick))
         
         //titleView
         let titleView: TitleButton = TitleButton()
-        titleView.setTitle("我的我的", forState: UIControlState.Normal)
-        titleView.addTarget(self, action: #selector(HomeTableViewController.titleButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        titleView.setTitle("我的我的", for: UIControlState())
+        titleView.addTarget(self, action: #selector(HomeTableViewController.titleButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         self.navigationItem.titleView = titleView
     }
     
-    func titleButtonClicked(btn: TitleButton) {
+    func titleButtonClicked(_ btn: TitleButton) {
 //        btn.selected = !btn.selected
         let vc = PopoverViewController()
         vc.transitioningDelegate = popoverAnimation;
-        vc.modalPresentationStyle = UIModalPresentationStyle.Custom
-        presentViewController(vc, animated: true, completion: nil)
+        vc.modalPresentationStyle = UIModalPresentationStyle.custom
+        present(vc, animated: true, completion: nil)
     }
     
     func leftItemClick() {
@@ -55,22 +55,22 @@ class HomeTableViewController: BaseTableViewController {
     }
     func rightItemClick() {
         let qrCodeView = QrCodeViewController()
-        presentViewController(qrCodeView, animated: true, completion: nil)
+        present(qrCodeView, animated: true, completion: nil)
     }
     
-    private lazy var popoverAnimation: PopoverAnimation = {
+    fileprivate lazy var popoverAnimation: PopoverAnimation = {
         let pop = PopoverAnimation()
         return pop
     }()
     
     
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }

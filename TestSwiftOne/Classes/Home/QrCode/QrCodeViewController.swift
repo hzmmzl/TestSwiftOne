@@ -22,24 +22,24 @@ class QrCodeViewController: UIViewController,UITabBarDelegate {
     }
     
     
-    @IBAction func cancelButtonClicked(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelButtonClicked(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectPhotoButtonClicked() {
         
     }
-    private func startAnimation(){
+    fileprivate func startAnimation(){
         bottomConstraint.constant = 0
         tiaoXinMaImage.layoutSubviews()
-        UIView.animateWithDuration(2) {
+        UIView.animate(withDuration: 2, animations: {
             self.bottomConstraint.constant = -self.containerHeightCons.constant
             self.tiaoXinMaImage.layoutSubviews()
-        }
+        }) 
     }
     
     //MARK: -UITabBarDelegate
-    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if item.tag == 1 {
             containerHeightCons.constant = 300
         }else if item.tag == 2{

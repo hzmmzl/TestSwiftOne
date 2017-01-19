@@ -7,37 +7,37 @@
 //
 
 import UIKit
-let kScreenWidth = UIScreen.mainScreen().bounds.width
-let kScreenHeight = UIScreen.mainScreen().bounds.height
+let kScreenWidth = UIScreen.main.bounds.width
+let kScreenHeight = UIScreen.main.bounds.height
 class PopoverPresentationController: UIPresentationController {
-    var presentFrame = CGRectZero
+    var presentFrame = CGRect.zero
     
-    override init(presentedViewController: UIViewController, presentingViewController: UIViewController) {
-        super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
+    override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
+        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
     }
     
     override func containerViewWillLayoutSubviews() {
 //        presentedView()?.frame = CGRect(x: 100, y: 56, width: 200, height: 300)
-        if presentFrame == CGRectZero{
-            presentedView()?.frame = CGRect(x: 100, y: 56, width: 200, height: 200)
+        if presentFrame == CGRect.zero{
+            presentedView?.frame = CGRect(x: 100, y: 56, width: 200, height: 200)
         }else
         {
-            presentedView()?.frame = presentFrame
+            presentedView?.frame = presentFrame
         }
         containerView?.addSubview(coverView)
-        containerView?.sendSubviewToBack(coverView)
+        containerView?.sendSubview(toBack: coverView)
     }
     
-    private lazy var coverView: UIView = {
+    fileprivate lazy var coverView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white: 0.0, alpha: 0.2)
-        view.frame = UIScreen.mainScreen().bounds
+        view.frame = UIScreen.main.bounds
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(PopoverPresentationController.close))
         view.addGestureRecognizer(tap)
         return view
     }()
     func close() {
-        presentedViewController.dismissViewControllerAnimated(true, completion: nil)
+        presentedViewController.dismiss(animated: true, completion: nil)
     }
 }
